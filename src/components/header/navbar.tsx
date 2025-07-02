@@ -48,10 +48,10 @@ const Navbar = () => {
   return (
     <nav className={`
       fixed top-0 w-full z-50 transition-all duration-300
-      ${isScrolled ? 'py-2 bg-gray-500/95 backdrop-blur-md shadow-md' : 'py-4 bg-transparent'}
+      ${isScrolled ? 'py-2 bg-zinc-500/95 backdrop-blur-md shadow-md' : 'py-4 bg-transparent'}
     `}>
       <TopBar />
-      <div className="container mx-auto px-6 flex justify-between items-center h-16">
+      <div className="container mx-auto px-6 flex justify-between items-center h-16 mt-4">
         {/* Logo with image */}
         <div className="flex items-center">
           <a href="#" className="logo flex items-center">
@@ -68,15 +68,15 @@ const Navbar = () => {
         {/* Desktop Nav Links */}
         <ul className="hidden md:flex items-center gap-8">
           <li>
-            <a href="#" className={`transition-colors font-medium flex items-center ${isScrolled ? 'text-white hover:text-[#00B51D]' : 'text-black hover:text-[#00B51D]'
+            <a href="/" className={`transition-colors font-medium flex items-center ${isScrolled ? 'text-white hover:text-[#00B51D]' : 'text-black hover:text-[#00B51D]'
               }`}>
               <FiHome className="mr-1" /> Home
             </a>
           </li>
           <li>
-            <a href="#" className={`transition-colors font-medium flex items-center ${isScrolled ? 'text-white hover:text-[#00B51D]' : 'text-black hover:text-[#00B51D]'
+            <a href="/identity" className={`transition-colors font-medium flex items-center ${isScrolled ? 'text-white hover:text-[#00B51D]' : 'text-black hover:text-[#00B51D]'
               }`}>
-              <FiInfo className="mr-1" /> About
+              <FiInfo className="mr-1" /> Identity
             </a>
           </li>
 
@@ -145,11 +145,73 @@ const Navbar = () => {
             </div>
           </li>
 
-          <li>
+          <li className="relative group">
             <a href="#" className={`transition-colors font-medium flex items-center ${isScrolled ? 'text-white hover:text-[#00B51D]' : 'text-black hover:text-[#00B51D]'
               }`}>
               <FiServer className="mr-1" /> Careers
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
             </a>
+            <div className={`absolute left-0 top-full mt-2 w-[600px] rounded-lg shadow-xl p-6 hidden group-hover:grid grid-cols-2 gap-6 transition-all duration-300 border ${isScrolled ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-100'
+              }`}>
+              <div>
+                <h4 className={`text-lg font-semibold mb-4 flex items-center ${isScrolled ? 'text-[#00B51D]' : 'text-[#024414]'
+                  }`}>
+                  Join Us
+                </h4>
+                <ul className="space-y-3">
+                  <li><a href="#" className={`hover:text-[#00B51D] flex items-center ${isScrolled ? 'text-gray-300' : 'text-gray-800'
+                    }`}>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    Septa-Crew
+                  </a></li>
+                  <li><a href="#" className={`hover:text-[#00B51D] flex items-center ${isScrolled ? 'text-gray-300' : 'text-gray-800'
+                    }`}>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    Septa-Squad
+                  </a></li>
+                  <li><a href="#" className={`hover:text-[#00B51D] flex items-center ${isScrolled ? 'text-gray-300' : 'text-gray-800'
+                    }`}>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    Septa-Club
+                  </a></li>
+                  <li><a href="#" className={`hover:text-[#00B51D] flex items-center ${isScrolled ? 'text-gray-300' : 'text-gray-800'
+                    }`}>
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                    Septa-CyberAcademy
+                  </a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className={`text-lg font-semibold mb-4 flex items-center ${isScrolled ? 'text-[#00B51D]' : 'text-[#024414]'
+                  }`}>
+                  Our Team
+                </h4>
+                <ul className="space-y-3">
+                  <li><a href="#" className={`hover:text-[#00B51D] flex items-center ${isScrolled ? 'text-gray-300' : 'text-gray-800'
+                    }`}>
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                    Departments
+                  </a></li>
+                  <li><a href="#" className={`hover:text-[#00B51D] flex items-center ${isScrolled ? 'text-gray-300' : 'text-gray-800'
+                    }`}>
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                    Our Structure
+                  </a></li>
+                  <li><a href="#" className={`hover:text-[#00B51D] flex items-center ${isScrolled ? 'text-gray-300' : 'text-gray-800'
+                    }`}>
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                    Security Monitoring
+                  </a></li>
+                  <li><a href="#" className={`hover:text-[#00B51D] flex items-center ${isScrolled ? 'text-gray-300' : 'text-gray-800'
+                    }`}>
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                    Cloud Security
+                  </a></li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li>
             <a href="#" className={`transition-colors font-medium flex items-center ${isScrolled ? 'text-white hover:text-[#00B51D]' : 'text-black hover:text-[#00B51D]'

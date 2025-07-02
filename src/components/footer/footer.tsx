@@ -52,19 +52,19 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative bg-[#024414] text-white pt-20 pb-16 overflow-hidden">
+    <footer className="relative bg-white text-gray-800 pt-20 pb-16 overflow-hidden border-t border-gray-200">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
         {/* Floating circles */}
         <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-[#00B51D]/10 blur-xl"></div>
         <div className="absolute bottom-40 right-20 w-40 h-40 rounded-full bg-[#00B51D]/10 blur-xl"></div>
         
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-5 bg-[url('/grid-pattern.svg')]"></div>
+        {/* Grid pattern - subtle gray */}
+        <div className="absolute inset-0 opacity-10 bg-[url('/grid-pattern.svg')]"></div>
         
-        {/* Wave divider at top */}
+        {/* Wave divider at top - green */}
         <svg 
-          className="absolute top-0 left-0 w-full h-20 text-[#013310]"
+          className="absolute top-0 left-0 w-full h-20 text-[#024414]"
           viewBox="0 0 1200 120" 
           preserveAspectRatio="none"
         >
@@ -84,7 +84,7 @@ const Footer = () => {
           exit={{ opacity: 0 }}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="fixed bottom-8 right-8 bg-[#00B51D] hover:bg-[#00a51a] p-3 rounded-full shadow-lg z-50 transition-all flex items-center justify-center"
+          className="fixed bottom-8 right-8 bg-[#00B51D] hover:bg-[#00a51a] text-white p-3 rounded-full shadow-lg z-50 transition-all flex items-center justify-center"
           aria-label="Scroll to top"
         >
           <FiArrowUp size={20} />
@@ -113,7 +113,7 @@ const Footer = () => {
                 className="mr-3"
               />
             </div>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-600 text-lg leading-relaxed">
               We transform businesses through innovative digital solutions that drive growth and create lasting impact.
             </p>
             <div className="flex space-x-5">
@@ -127,7 +127,7 @@ const Footer = () => {
                   key={index}
                   variants={fadeIn}
                   href="#"
-                  className="text-gray-300 hover:text-white hover:scale-110 transition-all duration-300"
+                  className="text-gray-500 hover:text-[#00B51D] hover:scale-110 transition-all duration-300"
                   aria-label={social.name}
                   whileHover={{ y: -3 }}
                 >
@@ -139,7 +139,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <motion.div variants={fadeIn}>
-            <h3 className="text-xl font-bold mb-6 flex items-center">
+            <h3 className="text-xl font-bold mb-6 flex items-center text-gray-900">
               <span className="w-3 h-3 bg-[#00B51D] rounded-full mr-2"></span>
               Quick Links
             </h3>
@@ -151,7 +151,7 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors flex items-center text-lg">
+                  <a href="#" className="text-gray-600 hover:text-[#00B51D] transition-colors flex items-center text-lg">
                     <span className="w-2 h-2 bg-[#00B51D] rounded-full mr-3"></span>
                     {link}
                   </a>
@@ -162,7 +162,7 @@ const Footer = () => {
 
           {/* Services */}
           <motion.div variants={fadeIn}>
-            <h3 className="text-xl font-bold mb-6 flex items-center">
+            <h3 className="text-xl font-bold mb-6 flex items-center text-gray-900">
               <span className="w-3 h-3 bg-[#00B51D] rounded-full mr-2"></span>
               Services
             </h3>
@@ -174,7 +174,7 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <a href="#" className="text-gray-300 hover:text-white transition-colors flex items-center text-lg">
+                  <a href="#" className="text-gray-600 hover:text-[#00B51D] transition-colors flex items-center text-lg">
                     <span className="w-2 h-2 bg-[#00B51D] rounded-full mr-3"></span>
                     {service}
                   </a>
@@ -188,11 +188,11 @@ const Footer = () => {
             variants={fadeIn}
             className="lg:col-span-2"
           >
-            <h3 className="text-xl font-bold mb-6 flex items-center">
+            <h3 className="text-xl font-bold mb-6 flex items-center text-gray-900">
               <span className="w-3 h-3 bg-[#00B51D] rounded-full mr-2"></span>
               Newsletter
             </h3>
-            <p className="text-gray-300 mb-6 text-lg">
+            <p className="text-gray-600 mb-6 text-lg">
               Subscribe to our newsletter for the latest updates and insights.
             </p>
             
@@ -215,10 +215,10 @@ const Footer = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Your email address"
-                    className="w-full px-5 py-3 rounded-lg bg-white/10 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-[#00B51D] text-white placeholder-gray-400"
+                    className="w-full px-5 py-3 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00B51D] text-gray-800 placeholder-gray-500"
                     required
                   />
-                  <FiMail className="absolute right-3 top-3.5 text-gray-400" />
+                  <FiMail className="absolute right-3 top-3.5 text-gray-500" />
                 </div>
                 <motion.button
                   type="submit"
@@ -248,38 +248,29 @@ const Footer = () => {
             <div className="mt-8 space-y-4">
               <div className="flex items-center">
                 <FiMapPin className="text-[#00B51D] mr-3 flex-shrink-0" />
-                <span className="text-gray-300">123 Business Ave, Tech City, TC 10001</span>
+                <span className="text-gray-600">123 Business Ave, Tech City, TC 10001</span>
               </div>
               <div className="flex items-center">
                 <FiPhone className="text-[#00B51D] mr-3" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-600">+1 (555) 123-4567</span>
               </div>
               <div className="flex items-center">
                 <FiMail className="text-[#00B51D] mr-3" />
-                <span className="text-gray-300">info@septagreen.com</span>
+                <span className="text-gray-600">info@septagreen.com</span>
               </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Divider */}
-        <motion.div 
-          initial={{ scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="border-t border-gray-700 my-12 origin-left"
-        ></motion.div>
-
-        {/* Copyright */}
+                {/* Copyright */}
         <motion.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="flex flex-col md:flex-row justify-between items-center"
+          className="flex flex-col md:flex-row justify-between items-center mt-12 md:mt-16 text-center md:text-left"
         >
-          <p className="text-gray-400 text-sm md:text-base">
+          <p className="text-gray-500 text-sm md:text-base">
             &copy; {new Date().getFullYear()} SeptaGreen. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-4 md:mt-0">
@@ -288,19 +279,30 @@ const Footer = () => {
                 key={index}
                 whileHover={{ scale: 1.05 }}
                 href="#"
-                className="text-gray-400 hover:text-white text-sm md:text-base transition-colors"
+                className="text-gray-500 hover:text-[#00B51D] text-sm md:text-base transition-colors"
               >
                 {item}
               </motion.a>
             ))}
           </div>
         </motion.div>
+
+        {/* Divider */}
+        <motion.div 
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="border-t border-gray-300 my-12 origin-left"
+        ></motion.div>
+
+
       </div>
 
-      {/* Decorative wave at bottom */}
+      {/* Decorative wave at bottom - green */}
       <div className="absolute bottom-0 left-0 w-full h-24 overflow-hidden">
         <svg 
-          className="absolute bottom-0 left-0 w-full h-full text-[#013310]"
+          className="absolute bottom-0 left-0 w-full h-full text-[#024414]"
           viewBox="0 0 1200 120" 
           preserveAspectRatio="none"
         >
