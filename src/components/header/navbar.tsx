@@ -214,7 +214,7 @@ const Navbar = () => {
             </div>
           </li>
           <li>
-            <a href="#" className={`transition-colors font-medium flex items-center ${isScrolled ? 'text-white hover:text-[#00B51D]' : 'text-black hover:text-[#00B51D]'
+            <a href="/chat-support" className={`transition-colors font-medium flex items-center ${isScrolled ? 'text-white hover:text-[#00B51D]' : 'text-black hover:text-[#00B51D]'
               }`}>
               <FiMessageSquare className="mr-1" /> Talk to Xempi
             </a>
@@ -276,7 +276,7 @@ const Navbar = () => {
       <div
         className={`
     md:hidden fixed inset-0 z-50 pt-6 px-4
-    transition-all duration-500 ease-in-out transform
+    transition-all duration-500 ease-in-out transform overflow-hidden
     ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}
     bg-gray-900
   `}

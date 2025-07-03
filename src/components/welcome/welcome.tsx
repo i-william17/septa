@@ -56,80 +56,6 @@ export default function Home() {
                     </div>
                 </motion.div>
 
-                {/* Advanced Particle Galaxy with Adinkra Symbols */}
-                <div className="absolute inset-0 z-0 overflow-hidden">
-                    {[...Array(50)].map((_, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0 }}
-                            animate={{
-                                opacity: [0, 0.8, 0],
-                                y: [0, Math.random() * 400 - 200],
-                                x: [0, Math.random() * 400 - 200],
-                                rotate: [0, 360]
-                            }}
-                            transition={{
-                                duration: Math.random() * 30 + 15,
-                                repeat: Infinity,
-                                delay: Math.random() * 10,
-                                ease: "linear"
-                            }}
-                            className={`absolute ${i % 5 === 0 ? 'text-[1.5rem]' : 'text-[0.8rem]'} ${i % 4 === 0 ? 'text-[#10B981]/40' : 'text-[#3B82F6]/30'}`}
-                            style={{
-                                left: `${Math.random() * 100}%`,
-                                top: `${Math.random() * 100}%`,
-                                fontFamily: 'Arial Unicode MS'
-                            }}
-                        >
-                            {i % 5 === 0 ? '𓃭' : i % 3 === 0 ? '𓃗' : '𓃒'}
-                        </motion.div>
-                    ))}
-                </div>
-
-                {/* Cultural Tech Orbs with African Patterns */}
-                <div className="absolute inset-0 z-1">
-                    {[20, 50, 80].map((position, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, scale: 0.5 }}
-                            animate={{
-                                opacity: [0.3, 0.8, 0.3],
-                                scale: [1, 1.2, 1],
-                                y: [0, -30, 0]
-                            }}
-                            transition={{
-                                duration: 8 + i * 2,
-                                repeat: Infinity,
-                                delay: i * 0.5,
-                                ease: "easeInOut"
-                            }}
-                            className={`absolute rounded-full ${i % 2 ? 'bg-[#10B981]/20' : 'bg-[#3B82F6]/15'} border ${i % 2 ? 'border-[#10B981]/30' : 'border-[#3B82F6]/30'
-                                } backdrop-blur-md overflow-hidden`}
-                            style={{
-                                width: `${100 + i * 50}px`,
-                                height: `${100 + i * 50}px`,
-                                left: `${position}%`,
-                                top: '50%',
-                                transform: 'translateY(-50%)'
-                            }}
-                        >
-                            
-                            <motion.div
-                                animate={{
-                                    rotate: 360,
-                                    scale: [1, 0.9, 1]
-                                }}
-                                transition={{
-                                    duration: 15 + i * 5,
-                                    repeat: Infinity,
-                                    ease: "linear"
-                                }}
-                                className="absolute inset-4 rounded-full border border-current opacity-20"
-                            />
-                        </motion.div>
-                    ))}
-                </div>
-
                 {/* Animated Connection Network with Tribal Patterns */}
                 <svg className="absolute inset-0 z-0 w-full h-full pointer-events-none">
                     {/* Main connection paths */}
@@ -153,23 +79,6 @@ export default function Home() {
                         fill="none"
                         strokeDasharray="3 5"
                     />
-                    
-                    {/* African tribal symbols along paths */}
-                    {[50, 150, 250, 350].map((x, i) => (
-                        <motion.text
-                            key={i}
-                            x={x}
-                            y={i % 2 === 0 ? 25 : 85}
-                            fontFamily="Arial Unicode MS"
-                            fontSize="14"
-                            fill="url(#connectionGradient)"
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={{ opacity: 0.7, scale: 1 }}
-                            transition={{ duration: 1, delay: 2 + i * 0.3 }}
-                        >
-                            {i % 2 === 0 ? '𓃒' : '𓃗'}
-                        </motion.text>
-                    ))}
                     
                     <defs>
                         <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -343,27 +252,7 @@ export default function Home() {
                                         whileTap={{ scale: 0.95 }}
                                         className="relative group cursor-pointer"
                                     >
-                                        <div className="text-lg font-medium text-black group-hover:text-white transition-colors duration-300 flex items-center">
-                                            {i % 2 === 0 && (
-                                                <motion.span 
-                                                    className="mr-2 text-[#10B981]"
-                                                    animate={{ rotate: [0, 360] }}
-                                                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                                                >
-                                                    𓃒
-                                                </motion.span>
-                                            )}
-                                            {word}
-                                            {i % 2 !== 0 && (
-                                                <motion.span 
-                                                    className="ml-2 text-[#3B82F6]"
-                                                    animate={{ scale: [1, 1.2, 1] }}
-                                                    transition={{ duration: 3, repeat: Infinity }}
-                                                >
-                                                    𓃗
-                                                </motion.span>
-                                            )}
-                                        </div>
+
                                         <motion.div
                                             layoutId={`underline-${word}`}
                                             className="absolute bottom-0 left-0 h-0.5 bg-[#10B981] w-full"
